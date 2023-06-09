@@ -114,7 +114,7 @@ void render(){
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, m_pTexture, &srcR, &destR);
 	for(int a=0; a<4864; a++){
-		if(v[a]!=0){
+		if(v[a]==1 || v[a]==2){
 		SDL_RenderCopyEx(renderer, raintext, &rainSrc, &rainDest[a], w, 0, SDL_FLIP_NONE);
 		}
 	}
