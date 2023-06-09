@@ -211,6 +211,10 @@ void event(){
 					showconsole();
 					printf("Enter temperature: (in degree Celsius)\n");
 					scanf("%d",&temp);
+					n=1;
+					background(1);
+					snowMetric=500;
+					CountOnlySnow=0;
 					ShowWindow(window, 0);
 					rain();
 					exeToForeground();
