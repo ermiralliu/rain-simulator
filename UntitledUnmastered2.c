@@ -150,6 +150,9 @@ void update(){
 							snowMetric+=3500/n;
 							}	
 					}
+					if(temp<=0 && n>4){
+						v[a]=2;	
+					}
 
 				}
 			}
