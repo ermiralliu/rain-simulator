@@ -1,0 +1,1 @@
+Number of fallen raindrops in the end is:5379
