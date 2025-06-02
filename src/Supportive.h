@@ -14,8 +14,8 @@ Events Quit(const Uint32 count);
 
 void renderClear(const Textures* texture, bool steamy);
 
-void placeDrops(Droplet* drop, RainType currentType);  //puts the drops in their initial positions
-
 void arrange(Atmosphere* atmo);
+
+void destroy_textures(Textures *textures);
 
 #endif

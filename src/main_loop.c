@@ -5,6 +5,7 @@
 #include "Supportive.h"
 #include "structures/mod.h"
 #include "user_input/window_helpers.h"
+#include <stddef.h>
 
 // main loop
 void render(const Droplet *drop, const Textures *texture,
@@ -17,7 +18,7 @@ void render(const Droplet *drop, const Textures *texture,
   else
     SDL_RenderCopy(texture->renderer, texture->background[atmo.ground],
                    &(texture->srcR), &(texture->destR));
-  for (int a = 0; a < NrOf_RAINDROPS; a++) {
+  for (size_t a = 0; a < NrOf_RAINDROPS; a++) {
     switch (drop[a].type) {
       case RAIN:
       case BRESHER:
@@ -37,7 +38,7 @@ void render(const Droplet *drop, const Textures *texture,
 }
 
 void update(Droplet *drop, const Atmosphere atmo, BackgroundLevel *ground, Uint32 *reCnt) {
-  for (int a = 0; a < NrOf_RAINDROPS; a++) {
+  for (size_t a = 0; a < NrOf_RAINDROPS; a++) {
     if (drop[a].type != STATICSNOW) {
       if (drop[a].dest.y < Y_DIMENSION + 30) {
         drop[a].dest.y += atmo.baseSpeed * drop[a].dest.h / 20;

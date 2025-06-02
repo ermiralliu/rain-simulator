@@ -1,5 +1,8 @@
 #include "CONSTANTS.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_video.h>
+#include "Supportive.h"
 #include "structures/mod.h"
 #include "initializations/mod.h"
 #include "main_loop.h"
@@ -37,6 +40,8 @@ int main(int argc, char* argv[]){
 		if(FRAMEDELAY > frameTime)
 			SDL_Delay(FRAMEDELAY - frameTime);
 	}
+	destroy_textures(&texture);
+	SDL_DestroyWindow(window);
 	SDL_Quit();
 	return 0;
 }

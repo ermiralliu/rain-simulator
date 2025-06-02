@@ -30,7 +30,7 @@ void init_background(Textures* texture){
 // supportive:
 void placeDrops(Droplet *drop, RainType currentType) {
   srand((unsigned)time(NULL));
-  for (int a = 0; a < NrOf_RAINDROPS; a++) {
+  for (size_t a = 0; a < NrOf_RAINDROPS; a++) {
     drop[a].type = currentType;
     drop[a].dest.x = 2 + rand() % (X_DIMENSION - 2);
     drop[a].dest.y = -Y_DIMENSION + rand() % Y_DIMENSION;
@@ -44,7 +44,7 @@ void init_rain(Droplet* drop, Textures* texture){
 	SDL_QueryTexture(texture->rain[RAIN], NULL, NULL, &(texture->rainSrc.w), &(texture->rainSrc.h));
 	texture->rainSrc.x = 0;
 	texture->rainSrc.y = 0;
-	for(int a=0; a < NrOf_RAINDROPS; a++){
+	for (size_t a=0; a < NrOf_RAINDROPS; a++){
 		drop[a].dest.h = texture->rainSrc.h + 3*(rand()%6); // I forgot we we're doing some 3D like shit, so we do need the h and w
 		drop[a].dest.w = texture->rainSrc.w*( drop[a].dest.h / drop[a].dest.h );
 	}
